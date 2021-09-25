@@ -14,14 +14,16 @@ class Account{
 } // end class
 
 class create_account extends Account{
+	
+    create_account(){
+        super();
+    }
+
     create_account(String n,int acc_num,int b,String a_t){ // pass name and account type 
             name=n;
             Acc_num=acc_num;
             Acc_Balance=b;
             acc_type=a_t;
-    }
-    create_account(){
-        super();
     }
         
     void insert(String n,int acc_num,String a_t){ // input user name, account number and type 
@@ -38,8 +40,9 @@ class create_account extends Account{
         System.out.println("Account Type : "+acc_type);
     }
  
-        void deposite(int acc_num,int money){                 
-                Acc_Balance=money;    
+        int deposite(int acc_num,int money){                 
+                Acc_Balance= Acc_Balance + money;    
+                return Acc_Balance;
         }
         
         int withdraw(int withd){
